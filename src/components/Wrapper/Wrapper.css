@@ -1,0 +1,13 @@
+.hero__container {
+	background-image: url('../../assets/img/pope-francis.@2x.png');
+	background-size: cover;
+	height: 95vh;
+	background-position: top;
+	object-fit: cover;
+}
+
+.button__container {
+	display: flex;
+	width: 55rem;
+	height: 8.2rem;
+}

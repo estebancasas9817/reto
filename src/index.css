@@ -1,0 +1,33 @@
+:root {
+	--color-green-positive: #3cbbb4;
+	--color-yellow-negative: 249, 173, 29;
+	--color-dark-background: rgba(0, 0, 0, 0.4);
+	--color-darker-background: rgba(0, 0, 0, 0.6);
+	--color-darker-gray: rgba(51, 51, 51, 1);
+	--color-dark-gray: rgba(70, 70, 70, 1);
+	--color-light-gray: rgba(235, 235, 235, 1);
+	--color-light-background: rgba(255, 255, 255, 0.4);
+	--color-lighter-background: rgba(255, 255, 255, 0.8);
+	--color-white: rgba(255, 255, 255, 1);
+}
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%; /* * 1rem = 10px; 10px/16 = 62.5% */
+	scroll-behavior: smooth;
+}
+body {
+	font-size: 1.6rem;
+	position: relative;
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}

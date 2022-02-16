@@ -1,0 +1,9 @@
+.featured-card {
+	display: flex;
+	flex-direction: column;
+	height: 50rem;
+	position: absolute;
+	top: 14rem;
+	width: 55rem;
+	left: 17rem;
+}
