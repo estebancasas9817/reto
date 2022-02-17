@@ -1,0 +1,16 @@
+.progressBar {
+	display: flex;
+	align-items: center;
+	height: 3.6rem;
+	align-items: stretch;
+}
+
+.progressBar__left {
+	background-color: var(--color-green-positive);
+	flex-basis: 25.5%;
+}
+
+.progressBar__right {
+	background-color: var(--color-yellow-negative);
+	flex-basis: 74.5%;
+}

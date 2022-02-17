@@ -1,0 +1,9 @@
+.btn__vote {
+	background-color: rgba(0, 0, 0, 0.6);
+	font-size: 1.6rem;
+	color: var(--color-white);
+	border: 1px solid var(--color-white);
+	padding: 1rem 0.46rem;
+	height: 3.8rem;
+	width: 10.7rem;
+}

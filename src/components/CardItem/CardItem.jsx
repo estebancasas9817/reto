@@ -6,16 +6,16 @@ import './CardItem.css';
 const CardItem = () => {
 	return (
 		<div className='card-item'>
-			<div>
+			<div className='card-item__container'>
 				<Button />
-				<h1>Kanye West</h1>
+				<h1 className='card-item__title'>Kanye West</h1>
 			</div>
-			<p>
+			<p className='card-item__desc'>
 				Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu
 				velit…
 			</p>
-			<p>1 month ago in Entertainment</p>
-			<div>
+			<p className='card-item__enterntainment'>1 month ago in Entertainment</p>
+			<div className='button__box'>
 				<Button />
 				<Button />
 				<ButtonVote />

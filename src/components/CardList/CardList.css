@@ -1,0 +1,6 @@
+.cardList {
+	display: flex;
+	gap: 2.7rem;
+	flex-wrap: wrap;
+	padding-bottom: 3.6rem;
+}

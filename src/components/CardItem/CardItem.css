@@ -1,5 +1,36 @@
 .card-item {
 	max-width: 34.8rem;
 	height: 34.8rem;
-	background-color: aliceblue;
+	background-color: rgb(175, 190, 206);
+	color: var(--color-white);
+}
+
+.card-item__container {
+	display: flex;
+	padding-top: 11rem;
+	align-items: center;
+	gap: 1.5rem;
+	padding-bottom: 1rem;
+}
+
+.card-item__title {
+	font-size: 3.6rem;
+}
+
+.card-item__desc {
+	font-size: 1.6rem;
+	margin: 0.7rem 3.6rem 1rem;
+}
+
+.card-item__enterntainment {
+	text-align: end;
+	margin-right: 3.6rem;
+}
+
+.button__box {
+	display: flex;
+	padding: 1rem 3.6rem;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1.2rem;
 }

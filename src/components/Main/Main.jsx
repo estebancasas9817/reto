@@ -16,7 +16,12 @@ const Main = () => {
 			</Wrapper>
 			<CardList>
 				<CardItem />
+				<CardItem />
+				<CardItem />
+				<CardItem />
 			</CardList>
+			<Banner />
+			<hr></hr>
 			<Footer />
 		</div>
 	);

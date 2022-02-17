@@ -1,7 +1,7 @@
 import React from 'react';
-
+import './CardList.css';
 const CardList = (props) => {
-	return <div>{props.children}</div>;
+	return <div className='cardList'>{props.children}</div>;
 };
 
 export default CardList;
