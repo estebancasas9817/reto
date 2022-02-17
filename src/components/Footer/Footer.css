@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
-	margin: 0 1rem 3rem;
+	margin: 3.6rem 1rem 3rem 0;
 }
 
 .footer__links ul {

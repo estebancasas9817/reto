@@ -1,30 +1,45 @@
 .card-item {
-	max-width: 34.8rem;
+	width: 34.8rem;
 	height: 34.8rem;
 	background-color: rgb(175, 190, 206);
 	color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .card-item__container {
 	display: flex;
-	padding-top: 11rem;
+	padding-top: 10.4rem;
 	align-items: center;
 	gap: 1.5rem;
 	padding-bottom: 1rem;
+	padding-right: 3.6rem;
 }
 
 .card-item__title {
-	font-size: 3.6rem;
+	font-size: 2.6rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .card-item__desc {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	margin: 0.7rem 3.6rem 1rem;
+	max-width: 22.7rem;
+	height: 5.6rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .card-item__enterntainment {
 	text-align: end;
 	margin-right: 3.6rem;
+	position: absolute;
+	bottom: 28%;
+	right: 0;
 }
 
 .button__box {
@@ -33,4 +48,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 1.2rem;
+	position: absolute;
+	bottom: 10%;
+	right: 0;
 }

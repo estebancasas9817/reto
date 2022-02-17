@@ -3,21 +3,19 @@ import ButtonVote from '../Button-Vote/ButtonVote';
 import Button from '../Button/Button';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import './CardItem.css';
-const CardItem = () => {
+const CardItem = (props) => {
+	const { items } = props;
 	return (
 		<div className='card-item'>
 			<div className='card-item__container'>
-				<Button />
-				<h1 className='card-item__title'>Kanye West</h1>
+				<Button className='button-width' />
+				<h1 className='card-item__title'>{items.name}</h1>
 			</div>
-			<p className='card-item__desc'>
-				Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu
-				velit…
-			</p>
+			<p className='card-item__desc'>{items.description}</p>
 			<p className='card-item__enterntainment'>1 month ago in Entertainment</p>
 			<div className='button__box'>
-				<Button />
-				<Button />
+				<Button className='button-width' />
+				<Button className='button-width' />
 				<ButtonVote />
 			</div>
 			<ProgressBar />

@@ -9,3 +9,7 @@
 .button__width {
 	flex: 1;
 }
+.button-width {
+	width: 3rem;
+	height: 3rem;
+}

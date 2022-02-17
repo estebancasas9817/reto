@@ -1,8 +1,9 @@
 .progressBar {
 	display: flex;
-	align-items: center;
 	height: 3.6rem;
-	align-items: stretch;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .progressBar__left {
