@@ -5,8 +5,12 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import './CardItem.css';
 const CardItem = (props) => {
 	const { items } = props;
+
+	const styles = 'card-item__container ';
+	console.log(items.picture);
 	return (
 		<div className='card-item'>
+			<img src={items.picture} alt='' width='100%' className='card__img' />
 			<div className='card-item__container'>
 				<Button className='button-width' />
 				<h1 className='card-item__title'>{items.name}</h1>

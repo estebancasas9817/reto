@@ -5,8 +5,15 @@ import Card from './components/Card/Card';
 import Button from './components/Button/Button';
 import ClosingBar from './components/ClosingBar/ClosingBar';
 import Main from './components/Main/Main';
+import { useEffect } from 'react';
 
 function App() {
+	useEffect(() => {
+		const fetchCardnfo = async () => {
+			const res = await fetch('');
+			const data = await res.json();
+		};
+	});
 	return (
 		<div className='App'>
 			<Header />
