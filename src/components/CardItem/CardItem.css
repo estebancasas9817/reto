@@ -21,9 +21,10 @@
 	display: flex;
 	padding-top: 10.4rem;
 	align-items: center;
-	gap: 1.5rem;
+	gap: 1.7rem;
 	padding-bottom: 1rem;
 	padding-right: 3.6rem;
+	z-index: 4;
 }
 
 .card-item__title {
@@ -31,6 +32,7 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	width: 27rem;
 	z-index: 5;
 }
 

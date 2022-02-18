@@ -4,14 +4,22 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	/* flex-wrap: wrap; */
 }
 
 .progressBar__left {
 	background-color: var(--color-green-positive);
-	flex-basis: 25.5%;
+	display: flex;
+	align-items: center;
+	padding-left: 2rem;
+	color: #fff;
 }
 
 .progressBar__right {
 	background-color: var(--color-yellow-negative);
-	flex-basis: 74.5%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 2rem;
+	color: #fff;
 }

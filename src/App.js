@@ -8,12 +8,6 @@ import Main from './components/Main/Main';
 import { useEffect } from 'react';
 
 function App() {
-	useEffect(() => {
-		const fetchCardnfo = async () => {
-			const res = await fetch('');
-			const data = await res.json();
-		};
-	});
 	return (
 		<div className='App'>
 			<Header />
@@ -21,8 +15,16 @@ function App() {
 				<div className='featured-card'>
 					<Card />
 					<Wrapper className='button__container'>
-						<Button className='button__width' />
-						<Button className='button__width' />
+						<Button
+							className='button__width blueColor'
+							iconWidth={32}
+							thumb={true}
+						/>
+						<Button
+							className='button__width yellowColor'
+							iconWidth={32}
+							thumb={false}
+						/>
 					</Wrapper>
 				</div>
 				<ClosingBar />

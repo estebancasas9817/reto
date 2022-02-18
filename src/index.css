@@ -9,6 +9,8 @@
 	--color-light-background: rgba(255, 255, 255, 0.4);
 	--color-lighter-background: rgba(255, 255, 255, 0.8);
 	--color-white: rgba(255, 255, 255, 1);
+	--color-yellow-full: #fbbd4a;
+	--color-green-full: #3cbbb4;
 }
 *,
 *::after,
