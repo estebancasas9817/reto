@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import DropdowMenu from '../DropdownMenu/DropdowMenu';
 import Wrapper from '../Wrapper/Wrapper';
@@ -8,29 +8,18 @@ import './Main.css';
 import Footer from '../Footer/Footer';
 import RectangularBanner from '../RectangularBanner/RectangularBanner';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import fetchData from '../../utils/apis/cardItem.api';
+import { UserContext } from '../../contexts/UserProvider';
+import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
 const Main = () => {
-	const [items, setItems] = useState([]);
+	const [user, dispatch] = useContext(UserContext);
 	useEffect(() => {
-		const fetchData = async () => {
-			const res = await fetch('http://localhost:4000/card');
-			const data = await res.json();
-			setItems(data.data);
-		};
-		fetchData();
+		fetchData().then((item) => {
+			dispatch({ type: 'fetch', payload: item });
+		});
 	}, []);
 
-	const monthsBtwnDates = (startDate, endDate) => {
-		startDate = new Date(startDate);
-		endDate = new Date(endDate);
-		return Math.max(
-			(endDate.getFullYear() - startDate.getFullYear()) * 12 +
-				endDate.getMonth() -
-				startDate.getMonth(),
-			0
-		);
-	};
-
-	const newItems = JSON.parse(JSON.stringify(items));
+	const newItems = JSON.parse(JSON.stringify(user));
 	const today = new Date();
 	const date =
 		today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -42,6 +31,10 @@ const Main = () => {
 		return item;
 	});
 
+	const onIncrement = () => {
+		dispatch({ type: 'increment' });
+	};
+
 	return (
 		<div className='main'>
 			<Banner />
@@ -52,7 +45,7 @@ const Main = () => {
 			<CardList>
 				{arr.map((item) => (
 					<div className='item__container' key={item.id}>
-						<CardItem item={item} />
+						<CardItem item={item} onIncrement={onIncrement} />
 						<ProgressBar votes={item.votes} />
 					</div>
 				))}

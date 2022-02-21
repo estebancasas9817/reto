@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import './CardItem.css';
 const CardItem = (props) => {
 	const { item } = props;
+
 	return (
 		<div className='card-item'>
 			<img src={item.picture} alt='' width='100%' className='card__img' />
@@ -18,6 +19,7 @@ const CardItem = (props) => {
 					className='button-width blueColor'
 					iconWidth={16}
 					thumb={true}
+					onIncrement={props.onIncrement}
 				/>
 				<Button
 					className='button-width yellowColor'

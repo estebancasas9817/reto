@@ -1,19 +1,18 @@
 import React from 'react';
 import './Header.css';
-import { headerTitles } from '../../utils/constants/header.constants';
-import { logoTitle } from '../../utils/constants/header.constants';
-const Header = () => {
+const Header = (props) => {
+	const { header, filteredLogo } = props;
 	return (
 		<header className='header'>
 			<nav className='nav' role='navigation'>
 				<div className='nav__logo'>
-					<h1 className='nav__logo-title'>{logoTitle}</h1>
+					<h1 className='nav__logo-title'>{filteredLogo}</h1>
 				</div>
 				<ul className='nav__list'>
-					{headerTitles.map((title) => (
+					{header.map((title) => (
 						<li className='nav__item' key={title.id}>
 							<a href='#' className='nav__link'>
-								{title.name}
+								{title.title}
 							</a>
 						</li>
 					))}

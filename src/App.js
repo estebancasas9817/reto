@@ -5,12 +5,26 @@ import Card from './components/Card/Card';
 import Button from './components/Button/Button';
 import ClosingBar from './components/ClosingBar/ClosingBar';
 import Main from './components/Main/Main';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import fetchHeader from './utils/apis/header.api';
+import UserProvider from './contexts/UserProvider';
 
 function App() {
+	const [header, setHeader] = useState([]);
+	useEffect(() => {
+		fetchHeader().then((headerItems) => {
+			setHeader(headerItems);
+		});
+	}, []);
+
+	const filteredHeader = header.filter((item) => item.id !== header.length);
+	const filteredLogo = header.reduce((acum, item) => {
+		return item.title;
+	}, 0);
+
 	return (
 		<div className='App'>
-			<Header />
+			<Header header={filteredHeader} filteredLogo={filteredLogo} />
 			<Wrapper className='hero__container'>
 				<div className='featured-card'>
 					<Card />
@@ -29,7 +43,9 @@ function App() {
 				</div>
 				<ClosingBar />
 			</Wrapper>
-			<Main />
+			<UserProvider>
+				<Main />
+			</UserProvider>
 		</div>
 	);
 }

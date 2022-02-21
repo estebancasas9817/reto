@@ -1,13 +1,10 @@
 import React from 'react';
+import percentage from '../../utils/helpers/percentage';
 import './ProgressBar.css';
 const ProgressBar = (props) => {
 	const { votes } = props;
-	const positive = Math.round(
-		(votes.positive * 100) / (votes.positive + votes.negative)
-	).toFixed(2);
-	const negative = Math.round(
-		(votes.negative * 100) / (votes.positive + votes.negative)
-	).toFixed(2);
+	const positive = percentage(votes.positive, votes.negative, true);
+	const negative = percentage(votes.positive, votes.negative, false);
 	return (
 		<div className='progressBar'>
 			<div className='progressBar__left' style={{ flexBasis: `${positive}%` }}>
