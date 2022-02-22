@@ -8,7 +8,7 @@ import Main from './components/Main/Main';
 import { useEffect, useState } from 'react';
 import fetchHeader from './utils/apis/header.api';
 import UserProvider from './contexts/UserProvider';
-
+import { cardInfo } from './utils/constants/card.constants';
 function App() {
 	const [header, setHeader] = useState([]);
 	useEffect(() => {
@@ -27,17 +27,17 @@ function App() {
 			<Header header={filteredHeader} filteredLogo={filteredLogo} />
 			<Wrapper className='hero__container'>
 				<div className='featured-card'>
-					<Card />
+					<Card cardInfo={cardInfo} />
 					<Wrapper className='button__container'>
 						<Button
 							className='button__width blueColor'
 							iconWidth={32}
-							thumb={true}
+							name='thumbs-up'
 						/>
 						<Button
 							className='button__width yellowColor'
 							iconWidth={32}
-							thumb={false}
+							name='thumbs-down'
 						/>
 					</Wrapper>
 				</div>

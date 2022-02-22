@@ -1,16 +1,15 @@
 import React from 'react';
-import ThumbDown from '../Icons/Thumb-Down';
-import ThumbUp from '../Icons/Thumb-Up';
+import Icons from '../Icons/Icons';
+
 import './Button.css';
 const Button = (props) => {
 	const styles = props.className;
 	const handlerClick = () => {
-		props.onIncrement();
+		props.onChangeVotes(props.userId, props.voteId);
 	};
 	return (
-		<button className={styles} onClick={handlerClick}>
-			{props.thumb && <ThumbUp iconWidth={props.iconWidth} />}
-			{!props.thumb && <ThumbDown iconWidth={props.iconWidth} />}
+		<button className={`${styles} ${props.styles}`} onClick={handlerClick}>
+			<Icons name={props.name} iconWidth={props.iconWidth} />
 		</button>
 	);
 };

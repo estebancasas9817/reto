@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Banner from '../Banner/Banner';
 import DropdowMenu from '../DropdownMenu/DropdowMenu';
 import Wrapper from '../Wrapper/Wrapper';
@@ -11,6 +11,9 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import fetchData from '../../utils/apis/cardItem.api';
 import { UserContext } from '../../contexts/UserProvider';
 import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
+import { iconsObject } from '../../utils/constants/icon.constants';
+import percentage from '../../utils/helpers/percentage';
+
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
 	useEffect(() => {
@@ -31,10 +34,15 @@ const Main = () => {
 		return item;
 	});
 
-	const onIncrement = () => {
-		dispatch({ type: 'increment' });
+	const onChangeVotes = (id, type) => {
+		if (type === 1) {
+			dispatch({ type: 'increment', payload: id });
+		} else {
+			dispatch({ type: 'decrement', payload: id });
+		}
 	};
-
+	// const positive = percentage(votes.positive, votes.negative, true);
+	// const negative = percentage(votes.positive, votes.negative, false);
 	return (
 		<div className='main'>
 			<Banner />
@@ -45,7 +53,11 @@ const Main = () => {
 			<CardList>
 				{arr.map((item) => (
 					<div className='item__container' key={item.id}>
-						<CardItem item={item} onIncrement={onIncrement} />
+						<CardItem
+							item={item}
+							onChangeVotes={onChangeVotes}
+							iconsObject={iconsObject}
+						/>
 						<ProgressBar votes={item.votes} />
 					</div>
 				))}
