@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../Button/Button';
 import './Card.css';
 const Card = (props) => {
 	const { heading, title, description, information, subTitle } = props.cardInfo;

@@ -9,8 +9,6 @@ const userReducer = (state = [], action) => {
 			return action.payload;
 
 		case TYPES.increment:
-			console.log('entra positivo');
-
 			const newUsersPositive = JSON.parse(JSON.stringify(state));
 			return newUsersPositive.map((user) => {
 				if (user.id === action.payload) {
@@ -20,7 +18,6 @@ const userReducer = (state = [], action) => {
 			});
 
 		case TYPES.decrement:
-			console.log('entra negativo');
 			const newUsersNegative = JSON.parse(JSON.stringify(state));
 			return newUsersNegative.map((user) => {
 				if (user.id === action.payload) {

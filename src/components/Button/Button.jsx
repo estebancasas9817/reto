@@ -5,10 +5,16 @@ import './Button.css';
 const Button = (props) => {
 	const styles = props.className;
 	const handlerClick = () => {
-		props.onChangeVotes(props.userId, props.voteId);
+		if (props.setDisable) {
+			props.setDisable(false);
+			props.onIconId(props.voteId);
+		}
 	};
 	return (
-		<button className={`${styles} ${props.styles}`} onClick={handlerClick}>
+		<button
+			className={`${styles} ${props.styles} btn__thumb`}
+			onClick={handlerClick}
+		>
 			<Icons name={props.name} iconWidth={props.iconWidth} />
 		</button>
 	);

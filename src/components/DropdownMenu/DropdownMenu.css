@@ -1,0 +1,22 @@
+.dropDownMenu {
+	background-color: var(--color-white);
+	border: 1px solid #000;
+	width: 17.3rem;
+	position: relative;
+}
+.dropDownTitle {
+	padding: 1.2rem 3rem 1.2rem 1rem;
+	text-align: center;
+	border: 1px solid #000;
+	cursor: pointer;
+	position: relative;
+}
+
+.openDropDown {
+	font-size: 1rem;
+	text-align: end;
+	display: inline-block;
+	position: absolute;
+	right: 7%;
+	top: 37%;
+}

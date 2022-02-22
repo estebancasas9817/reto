@@ -14,3 +14,7 @@
 .yellowColor {
 	background-color: var(--color-yellow-full);
 }
+
+.btn__thumb:focus {
+	border: 1px solid #fff;
+}

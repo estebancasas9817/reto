@@ -12,7 +12,6 @@ import fetchData from '../../utils/apis/cardItem.api';
 import { UserContext } from '../../contexts/UserProvider';
 import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
 import { iconsObject } from '../../utils/constants/icon.constants';
-import percentage from '../../utils/helpers/percentage';
 
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
@@ -41,8 +40,6 @@ const Main = () => {
 			dispatch({ type: 'decrement', payload: id });
 		}
 	};
-	// const positive = percentage(votes.positive, votes.negative, true);
-	// const negative = percentage(votes.positive, votes.negative, false);
 	return (
 		<div className='main'>
 			<Banner />
