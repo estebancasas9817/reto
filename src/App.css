@@ -1,9 +1,20 @@
 .featured-card {
 	display: flex;
 	flex-direction: column;
-	height: 50rem;
+	/* max-height: 50rem; */
 	position: absolute;
-	top: 14rem;
-	width: 55rem;
-	left: 17rem;
+	top: 8%;
+	max-width: 55rem;
+	left: 12%;
+}
+
+@media (max-width: 75em) {
+	.featured-card {
+		left: 8%;
+	}
+}
+@media (max-width: 56.25em) {
+	.featured-card {
+		left: 1%;
+	}
 }

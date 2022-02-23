@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import percentage from '../../utils/helpers/percentage';
 import './ProgressBar.css';
-import Icons from '../Icons/Icons';
 const ProgressBar = (props) => {
 	const { votes } = props;
 	const positive = percentage(votes.positive, votes.negative, true);

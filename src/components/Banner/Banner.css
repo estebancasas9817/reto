@@ -8,6 +8,11 @@
 	background-color: var(--color-light-gray);
 	gap: 2rem;
 }
+@media (max-width: 56.25em) {
+	.banner {
+		padding: 2.3rem 1.4rem;
+	}
+}
 .banner__background {
 	position: absolute;
 	top: 0;
@@ -47,4 +52,10 @@
 	font-size: 1.8rem;
 	font-weight: lighter;
 	letter-spacing: -0.05rem;
+}
+
+@media (max-width: 56.25em) {
+	.close-button {
+		display: none;
+	}
 }

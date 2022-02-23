@@ -10,7 +10,7 @@
 	--color-lighter-background: #ffffffcc;
 	--color-white: #ffffff;
 	--color-yellow-full: #fbbd4a;
-	--color-green-full: #3cbbb4;
+	--color-green-full: rgba(60, 187, 180, 0.6);
 }
 *,
 *::after,
@@ -24,6 +24,25 @@ html {
 	font-size: 62.5%; /* * 1rem = 10px; 10px/16 = 62.5% */
 	scroll-behavior: smooth;
 }
+
+@media (max-width: 75em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+@media (max-width: 62.5em) {
+	html {
+		font-size: 50%;
+	}
+}
+
+@media (max-width: 56.25em) {
+	html {
+		font-size: 47%;
+	}
+}
+
 body {
 	font-size: 1.6rem;
 	position: relative;

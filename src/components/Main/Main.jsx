@@ -12,16 +12,24 @@ import fetchData from '../../utils/apis/cardItem.api';
 import { UserContext } from '../../contexts/UserProvider';
 import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
 import { iconsObject } from '../../utils/constants/icon.constants';
+import fetchFooter from '../../utils/apis/footer.api';
 
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
 	const [itemType, setItemType] = useState('Grid');
+	const [footer, setFooter] = useState([]);
 
 	useEffect(() => {
 		fetchData().then((item) => {
 			dispatch({ type: 'fetch', payload: item });
 		});
 	}, [dispatch]);
+
+	useEffect(() => {
+		fetchFooter().then((footerItems) => {
+			setFooter(footerItems);
+		});
+	}, []);
 
 	const newItems = JSON.parse(JSON.stringify(user));
 	const today = new Date();
@@ -68,7 +76,7 @@ const Main = () => {
 			</CardList>
 			<RectangularBanner />
 			<hr></hr>
-			<Footer />
+			<Footer footer={footer} />
 		</div>
 	);
 };

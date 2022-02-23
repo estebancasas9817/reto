@@ -4,11 +4,10 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	/* flex-wrap: wrap; */
 }
 
 .progressBar__left {
-	background-color: var(--color-green-positive);
+	background-color: var(--color-green-full);
 	display: flex;
 	align-items: center;
 	padding-left: 2rem;

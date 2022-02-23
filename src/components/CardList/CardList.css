@@ -3,6 +3,19 @@
 	gap: 2.7rem;
 	flex-wrap: wrap;
 }
+
+@media (max-width: 75em) {
+	.cardList-grid {
+		gap: 4.5rem;
+	}
+}
+
+@media (max-width: 56.25em) {
+	.cardList-grid {
+		gap: 4rem;
+	}
+}
+
 .card-list {
 	display: flex;
 	flex-direction: column;

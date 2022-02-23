@@ -4,6 +4,7 @@
 	height: 95vh;
 	background-position: top;
 	object-fit: cover;
+	max-width: 100vw;
 }
 
 .button__container {
