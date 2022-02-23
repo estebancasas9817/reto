@@ -26,19 +26,62 @@ const CardItem = (props) => {
 	}
 
 	return (
-		<div className='card-item'>
-			<img src={item.picture} alt='' width='100%' className='card__img' />
-			<div className='card-item__container'>
+		<div
+			className={`${
+				props.itemType === 'Grid' ? 'card-item' : 'card-item-list'
+			}`}
+		>
+			<img
+				src={item.picture}
+				alt=''
+				width='100%'
+				className={`${
+					props.itemType === 'Grid' ? 'card__img' : 'card__img-list'
+				}`}
+			/>
+			<div
+				className={`${
+					props.itemType === 'Grid'
+						? 'card-item__container'
+						: 'card-item__container-list'
+				}`}
+			>
 				<Button
 					className={`button-width ${typeOfButton}`}
 					iconWidth={16}
 					name={iconName}
 				/>
-				<h1 className='card-item__title'>{item.name}</h1>
+				<h1
+					className={`${
+						props.itemType === 'Grid'
+							? 'card-item__title'
+							: 'card-item__title-list'
+					}`}
+				>
+					{item.name}
+				</h1>
 			</div>
-			<p className='card-item__desc'>{item.description}</p>
-			<p className='card-item__enterntainment'>{enterntainmentText}</p>
-			<div className='button__box'>
+			<p
+				className={`${
+					props.itemType === 'Grid' ? 'card-item__desc' : 'card-item__desc-list'
+				}`}
+			>
+				{item.description}
+			</p>
+			<p
+				className={`${
+					props.itemType === 'Grid'
+						? 'card-item__enterntainment'
+						: 'card-item__enterntainment-list'
+				}`}
+			>
+				{enterntainmentText}
+			</p>
+			<div
+				className={`${
+					props.itemType === 'Grid' ? 'button__box' : 'button__box-list'
+				}`}
+			>
 				{!voteAgain &&
 					props.iconsObject.map((icon) => (
 						<Button
@@ -71,6 +114,7 @@ CardItem.propTypes = {
 	item: PropTypes.node,
 	iconsObject: PropTypes.node,
 	onChangeVotes: PropTypes.node,
+	itemType: PropTypes.node,
 };
 
 export default CardItem;

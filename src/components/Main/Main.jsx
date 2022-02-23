@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import DropdowMenu from '../DropdownMenu/DropdowMenu';
 import Wrapper from '../Wrapper/Wrapper';
@@ -15,6 +15,8 @@ import { iconsObject } from '../../utils/constants/icon.constants';
 
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
+	const [itemType, setItemType] = useState('Grid');
+
 	useEffect(() => {
 		fetchData().then((item) => {
 			dispatch({ type: 'fetch', payload: item });
@@ -40,20 +42,25 @@ const Main = () => {
 			dispatch({ type: 'decrement', payload: id });
 		}
 	};
+
+	const onItemChange = (type) => {
+		setItemType(type);
+	};
 	return (
 		<div className='main'>
 			<Banner />
 			<Wrapper className='flex'>
 				<h1>Previous Rulings</h1>
-				<DropdowMenu />
+				<DropdowMenu onItemChange={onItemChange} itemType={itemType} />
 			</Wrapper>
-			<CardList>
+			<CardList itemType={itemType}>
 				{arr.map((item) => (
 					<div className='item__container' key={item.id}>
 						<CardItem
 							item={item}
 							onChangeVotes={onChangeVotes}
 							iconsObject={iconsObject}
+							itemType={itemType}
 						/>
 						<ProgressBar votes={item.votes} />
 					</div>

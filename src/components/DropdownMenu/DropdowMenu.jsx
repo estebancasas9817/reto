@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import DropDownItem from '../DropDownItem/DropDownItem';
+import PropTypes from 'prop-types';
+
 import './DropDownMenu.css';
-const DropdowMenu = () => {
+const DropdowMenu = (props) => {
 	const [dropDown, setDropDown] = useState(false);
-	const [itemType, setItemType] = useState('Grid');
 
 	const openCloseMenu = () => {
 		setDropDown(!dropDown);
 	};
-	const onItemChange = (type) => {
-		setItemType(type);
-	};
+
 	return (
 		<div className='dropDownMenu'>
 			<p className='dropDownTitle' onClick={openCloseMenu}>
-				{itemType} <span className='openDropDown'>&#9660;</span>
+				{props.itemType} <span className='openDropDown'>&#9660;</span>
 			</p>
 			{dropDown && (
 				<ul>
 					<DropDownItem
-						onItemChange={onItemChange}
+						onItemChange={props.onItemChange}
 						openCloseMenu={openCloseMenu}
 					>
 						List
 					</DropDownItem>
 					<DropDownItem
-						onItemChange={onItemChange}
+						onItemChange={props.onItemChange}
 						openCloseMenu={openCloseMenu}
 					>
 						Grid
@@ -34,6 +33,10 @@ const DropdowMenu = () => {
 			)}
 		</div>
 	);
+};
+DropdowMenu.propTypes = {
+	itemType: PropTypes.node,
+	onItemChange: PropTypes.node,
 };
 
 export default DropdowMenu;

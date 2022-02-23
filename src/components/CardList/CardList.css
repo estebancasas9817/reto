@@ -1,5 +1,11 @@
-.cardList {
+.cardList-grid {
 	display: flex;
 	gap: 2.7rem;
+	flex-wrap: wrap;
+}
+.card-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.8rem;
 	flex-wrap: wrap;
 }
