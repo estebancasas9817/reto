@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonVote from '../Button-Vote/ButtonVote';
+
 import SubmitButton from '../SubmitButton/SubmitButton';
 import './RectangularBanner.css';
 const RectangularBanner = () => {

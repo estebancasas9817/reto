@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import percentage from '../../utils/helpers/percentage';
 import './ProgressBar.css';
 const ProgressBar = (props) => {
@@ -16,5 +18,7 @@ const ProgressBar = (props) => {
 		</div>
 	);
 };
-
+ProgressBar.propTypes = {
+	votes: PropTypes.node,
+};
 export default ProgressBar;

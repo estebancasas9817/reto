@@ -1,5 +1,6 @@
 import React from 'react';
 import Icons from '../Icons/Icons';
+import PropTypes from 'prop-types';
 
 import './Button.css';
 const Button = (props) => {
@@ -19,5 +20,13 @@ const Button = (props) => {
 		</button>
 	);
 };
-
+Button.propTypes = {
+	className: PropTypes.node,
+	name: PropTypes.node,
+	iconWidth: PropTypes.node,
+	onIconId: PropTypes.node,
+	styles: PropTypes.node,
+	voteId: PropTypes.node,
+	setDisable: PropTypes.node,
+};
 export default Button;

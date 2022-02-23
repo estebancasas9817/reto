@@ -5,10 +5,11 @@ const TYPES = {
 };
 const userReducer = (state = [], action) => {
 	switch (action.type) {
-		case TYPES.fetch:
+		case TYPES.fetch: {
 			return action.payload;
+		}
 
-		case TYPES.increment:
+		case TYPES.increment: {
 			const newUsersPositive = JSON.parse(JSON.stringify(state));
 			return newUsersPositive.map((user) => {
 				if (user.id === action.payload) {
@@ -16,8 +17,9 @@ const userReducer = (state = [], action) => {
 				}
 				return user;
 			});
+		}
 
-		case TYPES.decrement:
+		case TYPES.decrement: {
 			const newUsersNegative = JSON.parse(JSON.stringify(state));
 			return newUsersNegative.map((user) => {
 				if (user.id === action.payload) {
@@ -25,6 +27,7 @@ const userReducer = (state = [], action) => {
 				}
 				return user;
 			});
+		}
 
 		default:
 			return state;

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import fetchHeader from './utils/apis/header.api';
 import UserProvider from './contexts/UserProvider';
 import { cardInfo } from './utils/constants/card.constants';
+import React from 'react';
 function App() {
 	const [header, setHeader] = useState([]);
 	useEffect(() => {

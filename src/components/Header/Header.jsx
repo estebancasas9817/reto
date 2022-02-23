@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './Header.css';
 const Header = (props) => {
 	const { header, filteredLogo } = props;
@@ -24,5 +26,8 @@ const Header = (props) => {
 		</header>
 	);
 };
-
+Header.propTypes = {
+	header: PropTypes.node,
+	filteredLogo: PropTypes.node,
+};
 export default Header;

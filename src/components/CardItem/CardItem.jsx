@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ButtonVote from '../Button-Vote/ButtonVote';
 import Button from '../Button/Button';
+import PropTypes from 'prop-types';
 import './CardItem.css';
 const CardItem = (props) => {
 	const [disable, setDisable] = useState(true);
@@ -64,6 +65,12 @@ const CardItem = (props) => {
 			</div>
 		</div>
 	);
+};
+
+CardItem.propTypes = {
+	item: PropTypes.node,
+	iconsObject: PropTypes.node,
+	onChangeVotes: PropTypes.node,
 };
 
 export default CardItem;

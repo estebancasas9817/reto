@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import './ButtonVote.css';
 const ButtonVote = (props) => {
 	const styles = `btn__vote ${props.disable}`;
@@ -20,5 +22,13 @@ const ButtonVote = (props) => {
 		</button>
 	);
 };
-
+ButtonVote.propTypes = {
+	disable: PropTypes.node,
+	onChangeVotes: PropTypes.node,
+	setVoteAgain: PropTypes.node,
+	voteAgain: PropTypes.node,
+	setDisable: PropTypes.node,
+	userId: PropTypes.node,
+	iconId: PropTypes.node,
+};
 export default ButtonVote;

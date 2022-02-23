@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './DropDownItem.css';
 
 const DropDownItem = (props) => {
@@ -12,5 +14,9 @@ const DropDownItem = (props) => {
 		</li>
 	);
 };
-
+DropDownItem.propTypes = {
+	children: PropTypes.node,
+	onItemChange: PropTypes.node,
+	openCloseMenu: PropTypes.node,
+};
 export default DropDownItem;

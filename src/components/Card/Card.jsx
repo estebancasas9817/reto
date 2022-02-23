@@ -1,5 +1,7 @@
 import React from 'react';
 import './Card.css';
+import PropTypes from 'prop-types';
+
 const Card = (props) => {
 	const { heading, title, description, information, subTitle } = props.cardInfo;
 	return (
@@ -12,5 +14,7 @@ const Card = (props) => {
 		</div>
 	);
 };
-
+Card.propTypes = {
+	cardInfo: PropTypes.node,
+};
 export default Card;

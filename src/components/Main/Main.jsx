@@ -19,7 +19,7 @@ const Main = () => {
 		fetchData().then((item) => {
 			dispatch({ type: 'fetch', payload: item });
 		});
-	}, []);
+	}, [dispatch]);
 
 	const newItems = JSON.parse(JSON.stringify(user));
 	const today = new Date();
