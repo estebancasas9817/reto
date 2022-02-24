@@ -1,31 +1,9 @@
-.cardList-grid {
-	display: flex;
-	gap: 2.7rem;
-	flex-wrap: wrap;
-}
-
-@media (max-width: 37.4em) {
-	.cardList-grid {
+@media (max-width: 37.5em) {
+	.horizontal__slider {
+		width: 100%;
 		overflow-x: scroll;
-		background-color: red;
 	}
-}
-
-@media (max-width: 75em) {
-	.cardList-grid {
-		gap: 4.5rem;
+	.horizontal__slider::-webkit-scrollbar {
+		display: none;
 	}
-}
-
-@media (max-width: 56.25em) {
-	.cardList-grid {
-		gap: 4rem;
-	}
-}
-
-.card-list {
-	display: flex;
-	flex-direction: column;
-	gap: 1.8rem;
-	flex-wrap: wrap;
 }

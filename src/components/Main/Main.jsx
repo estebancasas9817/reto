@@ -61,8 +61,10 @@ const Main = () => {
 				<h1>Previous Rulings</h1>
 				<DropdowMenu onItemChange={onItemChange} itemType={itemType} />
 			</Wrapper>
-			<CardList itemType={itemType}>
-				<div className='slider'>
+			<CardList className='horizontal__slider'>
+				<div
+					className={`${itemType === 'Grid' ? 'cardList-grid' : 'card-list'} `}
+				>
 					{arr.map((item) => (
 						<div className='item__container' key={item.id}>
 							<CardItem
