@@ -25,3 +25,6 @@
 .item__container {
 	position: relative;
 }
+.slider {
+	display: none;
+}

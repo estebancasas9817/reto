@@ -39,7 +39,7 @@
 }
 
 .card-item-list {
-	flex-basis: 100%;
+	flex: 1;
 	height: 15rem;
 	background: linear-gradient(
 		90deg,
@@ -53,6 +53,12 @@
 	flex-direction: column;
 	position: relative;
 	overflow: hidden;
+}
+
+@media (max-width: 49.37em) {
+	.card-item-list {
+		/* width: 100%; */
+	}
 }
 
 .card__img {
@@ -127,6 +133,12 @@
 	white-space: nowrap;
 	overflow: hidden;
 	z-index: 5;
+}
+
+@media (max-width: 49.37em) {
+	.card-item__desc-list {
+		max-width: 29rem;
+	}
 }
 
 .card-item__enterntainment {

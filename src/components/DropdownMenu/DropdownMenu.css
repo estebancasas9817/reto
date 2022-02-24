@@ -4,6 +4,12 @@
 	width: 17.3rem;
 	position: relative;
 }
+
+@media (max-width: 37.4em) {
+	.dropDownMenu {
+		display: none;
+	}
+}
 .dropDownTitle {
 	padding: 1.2rem 3rem 1.2rem 1rem;
 	text-align: center;

@@ -1,7 +1,6 @@
 .featured-card {
 	display: flex;
 	flex-direction: column;
-	/* max-height: 50rem; */
 	position: absolute;
 	top: 8%;
 	max-width: 55rem;
@@ -16,5 +15,12 @@
 @media (max-width: 56.25em) {
 	.featured-card {
 		left: 1%;
+	}
+}
+
+@media (max-width: 37.4em) {
+	.featured-card {
+		max-width: 40rem;
+		top: 5%;
 	}
 }

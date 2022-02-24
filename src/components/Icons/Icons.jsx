@@ -1,5 +1,7 @@
 import React from 'react';
 import sprite from '../../assets/img/sprite.svg';
+import PropTypes from 'prop-types';
+
 const Icons = (props) => {
 	// const name = {`${Icons}#icon-${name}`};
 	// console.log(props);
@@ -13,5 +15,8 @@ const Icons = (props) => {
 		</svg>
 	);
 };
-
+Icons.propTypes = {
+	name: PropTypes.node,
+	iconWidth: PropTypes.node,
+};
 export default Icons;

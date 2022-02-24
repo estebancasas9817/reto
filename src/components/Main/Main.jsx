@@ -62,17 +62,19 @@ const Main = () => {
 				<DropdowMenu onItemChange={onItemChange} itemType={itemType} />
 			</Wrapper>
 			<CardList itemType={itemType}>
-				{arr.map((item) => (
-					<div className='item__container' key={item.id}>
-						<CardItem
-							item={item}
-							onChangeVotes={onChangeVotes}
-							iconsObject={iconsObject}
-							itemType={itemType}
-						/>
-						<ProgressBar votes={item.votes} />
-					</div>
-				))}
+				<div className='slider'>
+					{arr.map((item) => (
+						<div className='item__container' key={item.id}>
+							<CardItem
+								item={item}
+								onChangeVotes={onChangeVotes}
+								iconsObject={iconsObject}
+								itemType={itemType}
+							/>
+							<ProgressBar votes={item.votes} />
+						</div>
+					))}
+				</div>
 			</CardList>
 			<RectangularBanner />
 			<hr></hr>
