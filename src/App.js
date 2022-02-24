@@ -12,6 +12,8 @@ import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
 function App() {
 	const [header, setHeader] = useState([]);
+	const [isMobile, setIsMobile] = useState(false);
+
 	useEffect(() => {
 		fetchHeader().then((headerItems) => {
 			setHeader(headerItems);
@@ -23,9 +25,18 @@ function App() {
 		return item.title;
 	}, 0);
 
+	const onIsMobile = () => {
+		setIsMobile(!isMobile);
+	};
+
 	return (
 		<div className='App'>
-			<Header header={filteredHeader} filteredLogo={filteredLogo} />
+			<Header
+				header={filteredHeader}
+				filteredLogo={filteredLogo}
+				onIsMobile={onIsMobile}
+				isMobile={isMobile}
+			/>
 			<Wrapper className='hero__container'>
 				<div className='featured-card'>
 					<Card cardInfo={cardInfo} />

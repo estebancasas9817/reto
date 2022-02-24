@@ -5,6 +5,20 @@
 	background-position: top;
 	object-fit: cover;
 	max-width: 100vw;
+	position: relative;
+}
+
+@media (max-width: 53.12em) {
+	.hero__container {
+		height: 80vh;
+	}
+}
+
+@media (max-width: 37.5em) {
+	.hero__container {
+		background-position: center;
+		height: 80vh;
+	}
 }
 
 .button__container {
