@@ -5,20 +5,15 @@ import Card from './components/Card/Card';
 import Button from './components/Button/Button';
 import ClosingBar from './components/ClosingBar/ClosingBar';
 import Main from './components/Main/Main';
-import { useEffect, useState } from 'react';
-import fetchHeader from './utils/apis/header.api';
+import { useState } from 'react';
 import UserProvider from './contexts/UserProvider';
 import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
+import useFetch from './components/hooks/useFetch';
+import API_HEADER from './utils/apis/header.api';
 function App() {
-	const [header, setHeader] = useState([]);
 	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		fetchHeader().then((headerItems) => {
-			setHeader(headerItems);
-		});
-	}, []);
+	const { myData: header } = useFetch(API_HEADER);
 
 	const filteredHeader = header.filter((item) => item.id !== header.length);
 	const filteredLogo = header.reduce((acum, item) => {

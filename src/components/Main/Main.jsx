@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Banner from '../Banner/Banner';
 import DropdowMenu from '../DropdownMenu/DropdowMenu';
 import Wrapper from '../Wrapper/Wrapper';
@@ -8,28 +8,18 @@ import './Main.css';
 import Footer from '../Footer/Footer';
 import RectangularBanner from '../RectangularBanner/RectangularBanner';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import fetchData from '../../utils/apis/cardItem.api';
 import { UserContext } from '../../contexts/UserProvider';
 import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
 import { iconsObject } from '../../utils/constants/icon.constants';
-import fetchFooter from '../../utils/apis/footer.api';
-
+import useFetch from '../hooks/useFetch';
+import API_FOOTER from '../../utils/apis/footer.api';
+import API_CARD_ITEM from '../../utils/apis/cardItem.api';
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
 	const [itemType, setItemType] = useState('Grid');
-	const [footer, setFooter] = useState([]);
-
-	useEffect(() => {
-		fetchData().then((item) => {
-			dispatch({ type: 'fetch', payload: item });
-		});
-	}, [dispatch]);
-
-	useEffect(() => {
-		fetchFooter().then((footerItems) => {
-			setFooter(footerItems);
-		});
-	}, []);
+	const { myData: footer } = useFetch(API_FOOTER);
+	const { myData: cardInfo } = useFetch(API_CARD_ITEM);
+	dispatch({ type: 'fetch', payload: cardInfo });
 
 	const newItems = JSON.parse(JSON.stringify(user));
 	const today = new Date();
