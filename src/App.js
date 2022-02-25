@@ -11,15 +11,15 @@ import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
 import useFetch from './components/hooks/useFetch';
 import API_HEADER from './utils/apis/header.api';
+import { getDaysBetween } from './utils/helpers/getDaysBetween';
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
 	const { myData: header } = useFetch(API_HEADER);
-
 	const filteredHeader = header.filter((item) => item.id !== header.length);
 	const filteredLogo = header.reduce((acum, item) => {
 		return item.title;
 	}, 0);
-
+	const daysToClose = getDaysBetween(new Date('03/15/2022'));
 	const onIsMobile = () => {
 		setIsMobile(!isMobile);
 	};
@@ -48,7 +48,7 @@ function App() {
 						/>
 					</Wrapper>
 				</div>
-				<ClosingBar />
+				<ClosingBar daysToClose={daysToClose} />
 			</Wrapper>
 			<UserProvider>
 				<Main />

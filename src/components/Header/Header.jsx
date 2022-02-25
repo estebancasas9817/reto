@@ -46,6 +46,7 @@ const Header = (props) => {
 							</a>
 						</li>
 					))}
+
 					<a href='#' className='toggle-button' onClick={handlerClick}>
 						<span className={`bar ${topLine}`}></span>
 						<span className={`bar ${middleLine}`}></span>

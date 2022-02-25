@@ -5,7 +5,7 @@
 	position: relative;
 }
 
-@media (max-width: 37.4em) {
+@media (max-width: 49.37em) {
 	.dropDownMenu {
 		display: none;
 	}

@@ -22,25 +22,25 @@
 	}
 }
 
-.cardList-grid {
+.cardList_grid {
 	display: flex;
 	gap: 2.7rem;
 	flex-wrap: wrap;
 }
 
 @media (max-width: 75em) {
-	.cardList-grid {
+	.cardList_grid {
 		gap: 4.5rem;
 	}
 }
 
 @media (max-width: 56.25em) {
-	.cardList-grid {
+	.cardList_grid {
 		gap: 4rem;
 	}
 }
 
-.card-list {
+.card_list {
 	display: flex;
 	flex-direction: column;
 	gap: 1.8rem;
@@ -53,8 +53,8 @@
 .slider {
 	display: none;
 }
-@media (max-width: 37.5em) {
-	.cardList-grid {
+@media (max-width: 49.37em) {
+	.cardList_grid {
 		white-space: nowrap;
 		flex-wrap: nowrap;
 		gap: 2rem;

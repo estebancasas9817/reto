@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import DropdowMenu from '../DropdownMenu/DropdowMenu';
 import Wrapper from '../Wrapper/Wrapper';
@@ -14,12 +14,18 @@ import { iconsObject } from '../../utils/constants/icon.constants';
 import useFetch from '../hooks/useFetch';
 import API_FOOTER from '../../utils/apis/footer.api';
 import API_CARD_ITEM from '../../utils/apis/cardItem.api';
+import { TYPES } from '../../contexts/userReducer';
+import classNames from 'classnames';
+import { getVotes } from '../../utils/helpers/getVotes';
 const Main = () => {
 	const [user, dispatch] = useContext(UserContext);
 	const [itemType, setItemType] = useState('Grid');
 	const { myData: footer } = useFetch(API_FOOTER);
 	const { myData: cardInfo } = useFetch(API_CARD_ITEM);
-	dispatch({ type: 'fetch', payload: cardInfo });
+
+	useEffect(() => {
+		dispatch({ type: TYPES.fetch, payload: cardInfo });
+	}, [dispatch, cardInfo]);
 
 	const newItems = JSON.parse(JSON.stringify(user));
 	const today = new Date();
@@ -35,15 +41,19 @@ const Main = () => {
 
 	const onChangeVotes = (id, type) => {
 		if (type === 1) {
-			dispatch({ type: 'increment', payload: id });
+			dispatch({ type: TYPES.increment, payload: id });
 		} else {
-			dispatch({ type: 'decrement', payload: id });
+			dispatch({ type: TYPES.decrement, payload: id });
 		}
 	};
 
 	const onItemChange = (type) => {
 		setItemType(type);
 	};
+	const cardStyles = classNames({
+		cardList_grid: itemType === 'Grid',
+		card_list: itemType === 'List',
+	});
 	return (
 		<div className='main'>
 			<Banner />
@@ -52,9 +62,7 @@ const Main = () => {
 				<DropdowMenu onItemChange={onItemChange} itemType={itemType} />
 			</Wrapper>
 			<CardList className='horizontal__slider'>
-				<div
-					className={`${itemType === 'Grid' ? 'cardList-grid' : 'card-list'} `}
-				>
+				<div className={cardStyles}>
 					{arr.map((item) => (
 						<div className='item__container' key={item.id}>
 							<CardItem
@@ -62,6 +70,7 @@ const Main = () => {
 								onChangeVotes={onChangeVotes}
 								iconsObject={iconsObject}
 								itemType={itemType}
+								getVotes={getVotes}
 							/>
 							<ProgressBar votes={item.votes} />
 						</div>
