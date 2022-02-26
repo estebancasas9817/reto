@@ -58,9 +58,9 @@ const Header = (props) => {
 	);
 };
 Header.propTypes = {
-	header: PropTypes.node,
-	filteredLogo: PropTypes.node,
-	isMobile: PropTypes.node,
-	onIsMobile: PropTypes.node,
+	header: PropTypes.array,
+	filteredLogo: PropTypes.string,
+	isMobile: PropTypes.bool,
+	onIsMobile: PropTypes.func,
 };
 export default Header;

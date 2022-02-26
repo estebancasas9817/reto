@@ -10,14 +10,20 @@ const userReducer = (state = [], action) => {
 		}
 
 		case TYPES.increment: {
-			const newUsersPositive = JSON.parse(JSON.stringify(state));
-			const algo = newUsersPositive.map((user) => {
+			const positiveVotes = state.find((user) => user.id === action.payload);
+			return state.map((user) => {
 				if (user.id === action.payload) {
-					user.votes.positive += 1;
+					return {
+						...user,
+						votes: {
+							...user.votes,
+							positive: (positiveVotes.votes.positive += 1),
+						},
+					};
+				} else {
+					return user;
 				}
-				return user;
 			});
-			return algo;
 		}
 
 		case TYPES.decrement: {
@@ -31,7 +37,6 @@ const userReducer = (state = [], action) => {
 		}
 
 		default:
-			console.log('default');
 			return state;
 	}
 };

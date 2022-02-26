@@ -24,9 +24,9 @@ Button.propTypes = {
 	className: PropTypes.node,
 	name: PropTypes.node,
 	iconWidth: PropTypes.node,
-	onIconId: PropTypes.node,
+	onIconId: PropTypes.func,
 	styles: PropTypes.node,
 	voteId: PropTypes.node,
-	setDisable: PropTypes.node,
+	setDisable: PropTypes.func,
 };
 export default Button;

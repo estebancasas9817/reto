@@ -54,6 +54,7 @@ const Main = () => {
 		cardList_grid: itemType === 'Grid',
 		card_list: itemType === 'List',
 	});
+
 	return (
 		<div className='main'>
 			<Banner />

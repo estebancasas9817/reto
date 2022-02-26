@@ -35,6 +35,6 @@ const Footer = (props) => {
 	);
 };
 Footer.propTypes = {
-	footer: PropTypes.node,
+	footer: PropTypes.array,
 };
 export default Footer;

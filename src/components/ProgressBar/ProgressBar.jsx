@@ -18,6 +18,6 @@ const ProgressBar = (props) => {
 	);
 };
 ProgressBar.propTypes = {
-	votes: PropTypes.node,
+	votes: PropTypes.object,
 };
 export default ProgressBar;

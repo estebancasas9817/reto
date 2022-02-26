@@ -23,12 +23,12 @@ const ButtonVote = (props) => {
 	);
 };
 ButtonVote.propTypes = {
-	disable: PropTypes.node,
-	onChangeVotes: PropTypes.node,
-	setVoteAgain: PropTypes.node,
-	voteAgain: PropTypes.node,
-	setDisable: PropTypes.node,
-	userId: PropTypes.node,
-	iconId: PropTypes.node,
+	disable: PropTypes.bool,
+	onChangeVotes: PropTypes.func,
+	setVoteAgain: PropTypes.func,
+	voteAgain: PropTypes.bool,
+	setDisable: PropTypes.func,
+	userId: PropTypes.number,
+	iconId: PropTypes.string,
 };
 export default ButtonVote;

@@ -35,8 +35,8 @@ const DropdowMenu = (props) => {
 	);
 };
 DropdowMenu.propTypes = {
-	itemType: PropTypes.node,
-	onItemChange: PropTypes.node,
+	itemType: PropTypes.string,
+	onItemChange: PropTypes.func,
 };
 
 export default DropdowMenu;

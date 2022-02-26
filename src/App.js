@@ -17,7 +17,7 @@ function App() {
 	const { myData: header } = useFetch(API_HEADER);
 	const filteredHeader = header.filter((item) => item.id !== header.length);
 	const filteredLogo = header.reduce((acum, item) => {
-		return item.title;
+		return item;
 	}, 0);
 	const daysToClose = getDaysBetween(new Date('03/15/2022'));
 	const onIsMobile = () => {
@@ -28,7 +28,7 @@ function App() {
 		<div className='App'>
 			<Header
 				header={filteredHeader}
-				filteredLogo={filteredLogo}
+				filteredLogo={filteredLogo.title}
 				onIsMobile={onIsMobile}
 				isMobile={isMobile}
 			/>

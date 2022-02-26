@@ -75,11 +75,11 @@ const CardItem = (props) => {
 };
 
 CardItem.propTypes = {
-	item: PropTypes.node,
-	iconsObject: PropTypes.node,
-	onChangeVotes: PropTypes.node,
-	itemType: PropTypes.node,
-	getVotes: PropTypes.node,
+	item: PropTypes.object,
+	iconsObject: PropTypes.array,
+	onChangeVotes: PropTypes.func,
+	itemType: PropTypes.string,
+	getVotes: PropTypes.func,
 };
 
 export default CardItem;
