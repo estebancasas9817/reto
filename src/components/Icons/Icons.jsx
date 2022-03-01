@@ -3,8 +3,6 @@ import sprite from '../../assets/img/sprite.svg';
 import PropTypes from 'prop-types';
 
 const Icons = (props) => {
-	// const name = {`${Icons}#icon-${name}`};
-	// console.log(props);
 	return (
 		<svg
 			className='search__icon'

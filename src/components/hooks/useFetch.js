@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import URL from '../../utils/apis/api';
 const useFetch = (type) => {
-	console.log('entraaa', type);
 	const [myData, setMyData] = useState([]);
 	const finalUrl = URL + type;
 	useEffect(() => {

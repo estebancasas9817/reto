@@ -6,7 +6,7 @@ import './CardItem.css';
 import { cardItemStyles } from '../../utils/classes/cardItem';
 const CardItem = (props) => {
 	const [isDisable, setIsDisable] = useState(true);
-	const [iconId, setIconId] = useState('');
+	const [iconId, setIconId] = useState(0);
 	const [voteAgain, setVoteAgain] = useState(false);
 	const [voteText, setVotetext] = useState('Vote Now');
 	const { item, getVotes } = props;
@@ -47,7 +47,7 @@ const CardItem = (props) => {
 
 	return (
 		<div className={cardItem}>
-			<img src={item.picture} alt='' width='100%' className={cardImg} />
+			<img src={item.picture} alt='pictures' width='100%' className={cardImg} />
 			<div className={cardItemContainer}>
 				<Button
 					className={`button-width ${typeOfButton}`}
