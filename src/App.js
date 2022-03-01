@@ -10,11 +10,10 @@ import UserProvider from './contexts/UserProvider';
 import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
 import useFetch from './components/hooks/useFetch';
-import API_HEADER from './utils/apis/header.api';
 import { getDaysBetween } from './utils/helpers/getDaysBetween';
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
-	const { myData: header } = useFetch(API_HEADER);
+	const { myData: header } = useFetch('header');
 	const filteredHeader = header.filter((item) => item.id !== header.length);
 	const filteredLogo = header.reduce((acum, item) => {
 		return item;

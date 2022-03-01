@@ -85,7 +85,7 @@
 		position: fixed;
 		width: 100%;
 		flex-direction: column;
-		background-color: rgba(0, 0, 0, 0.712);
+		background-color: var(--color-darker-background);
 		backdrop-filter: blur(2rem);
 		height: 100vh;
 		top: 0rem;

@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash.clonedeep';
 const TYPES = {
 	fetch: 'fetch',
 	increment: 'increment',
@@ -10,24 +11,17 @@ const userReducer = (state = [], action) => {
 		}
 
 		case TYPES.increment: {
-			const positiveVotes = state.find((user) => user.id === action.payload);
-			return state.map((user) => {
+			const newUsersPositive = cloneDeep(state);
+			return newUsersPositive.map((user) => {
 				if (user.id === action.payload) {
-					return {
-						...user,
-						votes: {
-							...user.votes,
-							positive: (positiveVotes.votes.positive += 1),
-						},
-					};
-				} else {
-					return user;
+					user.votes.positive += 1;
 				}
+				return user;
 			});
 		}
 
 		case TYPES.decrement: {
-			const newUsersNegative = JSON.parse(JSON.stringify(state));
+			const newUsersNegative = cloneDeep(state);
 			return newUsersNegative.map((user) => {
 				if (user.id === action.payload) {
 					user.votes.negative += 1;
@@ -35,7 +29,6 @@ const userReducer = (state = [], action) => {
 				return user;
 			});
 		}
-
 		default:
 			return state;
 	}

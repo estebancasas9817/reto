@@ -7,12 +7,12 @@
 	width: 10.7rem;
 }
 
-.true {
+.btn__vote_disable {
 	cursor: not-allowed;
-	background-color: #30303099;
+	background-color: var(--color-background-disable);
 }
 
-.false {
+.btn__vote_enable {
 	cursor: pointer;
-	background-color: #00000099;
+	background-color: var(--color-background-enable);
 }

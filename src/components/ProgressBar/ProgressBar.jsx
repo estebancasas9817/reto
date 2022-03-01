@@ -4,8 +4,8 @@ import percentage from '../../utils/helpers/percentage';
 import './ProgressBar.css';
 const ProgressBar = (props) => {
 	const { votes } = props;
-	const positive = percentage(votes.positive, votes.negative, true);
-	const negative = percentage(votes.positive, votes.negative, false);
+	const positive = percentage(votes.positive, votes.negative + votes.positive);
+	const negative = percentage(votes.negative, votes.negative + votes.positive);
 	return (
 		<div className='progressBar'>
 			<div className='progressBar__left' style={{ flexBasis: `${positive}%` }}>

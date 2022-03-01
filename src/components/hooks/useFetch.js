@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-
-const useFetch = (url) => {
+import URL from '../../utils/apis/api';
+const useFetch = (type) => {
+	console.log('entraaa', type);
 	const [myData, setMyData] = useState([]);
-
+	const finalUrl = URL + type;
 	useEffect(() => {
 		const fetchData = async () => {
-			const res = await fetch(url);
+			const res = await fetch(finalUrl);
 			const data = await res.json();
 			setMyData(data);
 		};
 		fetchData();
-	}, [url]);
+	}, [finalUrl]);
 
 	return { myData };
 };

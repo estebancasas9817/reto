@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import DropDownItem from '../DropDownItem/DropDownItem';
 import PropTypes from 'prop-types';
-
 import './DropDownMenu.css';
 const DropdowMenu = (props) => {
-	const [dropDown, setDropDown] = useState(false);
+	const [IsdropDown, setIsDropDown] = useState(false);
 
-	const openCloseMenu = () => {
-		setDropDown(!dropDown);
+	const toggleMenu = () => {
+		setIsDropDown(!IsdropDown);
 	};
 
 	return (
 		<div className='dropDownMenu'>
-			<p className='dropDownTitle' onClick={openCloseMenu}>
+			<p className='dropDownTitle' onClick={toggleMenu}>
 				{props.itemType} <span className='openDropDown'>&#9660;</span>
 			</p>
-			{dropDown && (
+			{IsdropDown && (
 				<ul>
 					<DropDownItem
 						onItemChange={props.onItemChange}
-						openCloseMenu={openCloseMenu}
+						toggleMenu={toggleMenu}
 					>
 						List
 					</DropDownItem>
 					<DropDownItem
 						onItemChange={props.onItemChange}
-						openCloseMenu={openCloseMenu}
+						toggleMenu={toggleMenu}
 					>
 						Grid
 					</DropDownItem>

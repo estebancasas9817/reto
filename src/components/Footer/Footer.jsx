@@ -19,16 +19,13 @@ const Footer = (props) => {
 			<div className='footer__social'>
 				<span>Follow us</span>
 				<ul>
-					<li>
-						<a href=''>
-							<Icons name='facebook2' iconWidth='24px' />
-						</a>
-					</li>
-					<li>
-						<a href=''>
-							<Icons name='twitter' iconWidth='24px' />
-						</a>
-					</li>
+					{props.footerIcons.map((icon) => (
+						<li key={icon.id}>
+							<a href=''>
+								<Icons name={icon.name} iconWidth={icon.iconWidth} />
+							</a>
+						</li>
+					))}
 				</ul>
 			</div>
 		</footer>
@@ -36,5 +33,6 @@ const Footer = (props) => {
 };
 Footer.propTypes = {
 	footer: PropTypes.array,
+	footerIcons: PropTypes.array,
 };
 export default Footer;

@@ -1,34 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ButtonVote.css';
+import classNames from 'classnames';
 const ButtonVote = (props) => {
-	const styles = `btn__vote ${props.disable}`;
-	const [voteText, setVotetext] = useState('Vote Now');
+	const styles = classNames({
+		btn__vote_disable: props.disable,
+		btn__vote_enable: !props.disable,
+	});
 	const handlerClick = () => {
 		if (!props.voteAgain) {
-			setVotetext('Vote Again');
-			props.onChangeVotes(props.userId, props.iconId);
-			props.setVoteAgain(true);
-		} else {
-			props.setDisable(true);
-			setVotetext('Vote Now');
-			props.setVoteAgain(false);
+			props.handlerChildClick(props.userId, props.iconId);
 		}
+		props.handlerButtonVoteClick();
 	};
 	return (
-		<button className={styles} disabled={props.disable} onClick={handlerClick}>
-			{voteText}
+		<button
+			className={`btn__vote ${styles}`}
+			disabled={props.disable}
+			onClick={handlerClick}
+		>
+			{props.voteText}
 		</button>
 	);
 };
 ButtonVote.propTypes = {
 	disable: PropTypes.bool,
-	onChangeVotes: PropTypes.func,
-	setVoteAgain: PropTypes.func,
+	handlerChildClick: PropTypes.func,
 	voteAgain: PropTypes.bool,
-	setDisable: PropTypes.func,
 	userId: PropTypes.number,
-	iconId: PropTypes.string,
+	iconId: PropTypes.number,
+	voteText: PropTypes.string,
+	handlerButtonVoteClick: PropTypes.func,
 };
 export default ButtonVote;

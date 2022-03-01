@@ -5,23 +5,36 @@ import PropTypes from 'prop-types';
 import './CardItem.css';
 import { cardItemStyles } from '../../utils/classes/cardItem';
 const CardItem = (props) => {
-	const [disable, setDisable] = useState(true);
+	const [isDisable, setIsDisable] = useState(true);
 	const [iconId, setIconId] = useState('');
 	const [voteAgain, setVoteAgain] = useState(false);
+	const [voteText, setVotetext] = useState('Vote Now');
 	const { item, getVotes } = props;
 
 	const { typeOfButton, iconName } = getVotes(
 		item.votes.positive,
 		item.votes.negative
 	);
-	const onIconId = (id) => {
-		setIconId(id);
-	};
+
 	let enterntainmentText = `${item.lastUpdated} months in ${item.category}`;
 	if (voteAgain) {
 		enterntainmentText = 'Thank you for your vote!';
 	}
-	const cardStyles = cardItemStyles(props);
+
+	const handlerButtonClick = (id) => {
+		setIsDisable(!isDisable);
+		setIconId(id);
+	};
+	const handlerButtonVoteClick = () => {
+		if (!voteAgain) {
+			setVotetext('Vote Again');
+		} else {
+			setIsDisable(true);
+			setVotetext('Vote Now');
+		}
+		setVoteAgain(!voteAgain);
+	};
+
 	const {
 		cardItem,
 		cardImg,
@@ -30,7 +43,7 @@ const CardItem = (props) => {
 		cardItemDesc,
 		cardItemEntertain,
 		buttonBox,
-	} = cardStyles;
+	} = cardItemStyles(props);
 
 	return (
 		<div className={cardItem}>
@@ -55,19 +68,20 @@ const CardItem = (props) => {
 							styles={icon.style}
 							name={icon.name}
 							voteId={icon.id}
-							setDisable={setDisable}
-							onIconId={onIconId}
+							handlerButtonClick={handlerButtonClick}
 						/>
 					))}
 
 				<ButtonVote
-					disable={disable}
+					disable={isDisable}
 					iconId={iconId}
 					userId={item.id}
-					onChangeVotes={props.onChangeVotes}
-					setDisable={setDisable}
+					handlerChildClick={props.handlerChildClick}
+					setDisable={setIsDisable}
 					setVoteAgain={setVoteAgain}
+					voteText={voteText}
 					voteAgain={voteAgain}
+					handlerButtonVoteClick={handlerButtonVoteClick}
 				/>
 			</div>
 		</div>
@@ -77,7 +91,7 @@ const CardItem = (props) => {
 CardItem.propTypes = {
 	item: PropTypes.object,
 	iconsObject: PropTypes.array,
-	onChangeVotes: PropTypes.func,
+	handlerChildClick: PropTypes.func,
 	itemType: PropTypes.string,
 	getVotes: PropTypes.func,
 };

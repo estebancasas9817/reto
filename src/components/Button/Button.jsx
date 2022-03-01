@@ -6,10 +6,7 @@ import './Button.css';
 const Button = (props) => {
 	const styles = props.className;
 	const handlerClick = () => {
-		if (props.setDisable) {
-			props.setDisable(false);
-			props.onIconId(props.voteId);
-		}
+		props.handlerButtonClick(props.voteId);
 	};
 	return (
 		<button
@@ -24,9 +21,8 @@ Button.propTypes = {
 	className: PropTypes.node,
 	name: PropTypes.node,
 	iconWidth: PropTypes.node,
-	onIconId: PropTypes.func,
 	styles: PropTypes.node,
 	voteId: PropTypes.node,
-	setDisable: PropTypes.func,
+	handlerButtonClick: PropTypes.func,
 };
 export default Button;

@@ -6,7 +6,7 @@ import './DropDownItem.css';
 const DropDownItem = (props) => {
 	const handdlerClick = () => {
 		props.onItemChange(props.children);
-		props.openCloseMenu();
+		props.toggleMenu();
 	};
 	return (
 		<li className='dropDownItem' onClick={handdlerClick}>
@@ -17,6 +17,6 @@ const DropDownItem = (props) => {
 DropDownItem.propTypes = {
 	children: PropTypes.node,
 	onItemChange: PropTypes.node,
-	openCloseMenu: PropTypes.node,
+	toggleMenu: PropTypes.node,
 };
 export default DropDownItem;

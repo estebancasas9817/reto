@@ -9,8 +9,11 @@
 	--color-light-background: #ffffff66;
 	--color-lighter-background: #ffffffcc;
 	--color-white: #ffffff;
+	--color-black: #000;
 	--color-yellow-full: #fbbd4a;
 	--color-green-full: rgba(60, 187, 180, 0.6);
+	--color-background-disable: #30303099;
+	--color-background-enable: #00000099;
 }
 *,
 *::after,
