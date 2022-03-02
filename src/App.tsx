@@ -6,7 +6,7 @@ import Button from './components/Button/Button';
 import ClosingBar from './components/ClosingBar/ClosingBar';
 import Main from './components/Main/Main';
 import { useState } from 'react';
-import UserProvider from './contexts/UserProvider';
+import UserProvider from './contexts/UserProvider.tsx';
 import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
 import useFetch from './components/hooks/useFetch';
@@ -14,8 +14,8 @@ import { getDaysBetween } from './utils/helpers/getDaysBetween';
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
 	const { myData: header } = useFetch('header');
-	const filteredHeader = header.filter((item) => item.id !== header.length);
-	const filteredLogo = header.reduce((acum, item) => {
+	const filteredHeader: {} = header.filter((item) => item.id !== header.length);
+	const filteredLogo: {} = header.reduce((acum, item) => {
 		return item;
 	}, 0);
 	const daysToClose = getDaysBetween(new Date('03/15/2022'));

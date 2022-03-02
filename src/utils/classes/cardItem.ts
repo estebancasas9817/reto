@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-const cardItemStyles = (props) => {
+const cardItemStyles = (props: { itemType: string }) => {
 	const cardStyles = {
 		cardItem: classNames({
 			cardItem: props.itemType === 'Grid',

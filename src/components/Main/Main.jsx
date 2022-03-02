@@ -8,7 +8,7 @@ import './Main.css';
 import Footer from '../Footer/Footer';
 import RectangularBanner from '../RectangularBanner/RectangularBanner';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import { UserContext } from '../../contexts/UserProvider';
+import { UserContext } from '../../contexts/UserProvider.tsx';
 import monthsBtwnDates from '../../utils/helpers/monthsBtwnDates';
 import { iconsObject } from '../../utils/constants/icon.constants';
 import useFetch from '../hooks/useFetch';

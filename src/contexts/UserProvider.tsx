@@ -2,8 +2,8 @@ import { createContext, useReducer } from 'react';
 import userReducer from './userReducer';
 import React from 'react';
 import PropTypes from 'prop-types';
-const UserContext = createContext();
-const UserProvider = (props) => {
+const UserContext = createContext({});
+const UserProvider = (props: { children: React.ReactNode }) => {
 	const [user, dispatch] = useReducer(userReducer, []);
 	return (
 		<UserContext.Provider value={[user, dispatch]}>

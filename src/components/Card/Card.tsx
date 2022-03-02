@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 import PropTypes from 'prop-types';
 
-const Card = (props) => {
+const Card = (props: { cardInfo: {} }) => {
 	const { heading, title, description, information, subTitle } = props.cardInfo;
 	return (
 		<div className='card'>

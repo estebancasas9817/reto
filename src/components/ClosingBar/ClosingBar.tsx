@@ -1,7 +1,7 @@
 import React from 'react';
 import './ClosingBar.css';
 import PropTypes from 'prop-types';
-const ClosingBar = (props) => {
+const ClosingBar = (props: { daysToClose: number }) => {
 	return (
 		<div className='hero__closing-gauge'>
 			<div className='closing-gauge__left'>
@@ -16,7 +16,7 @@ const ClosingBar = (props) => {
 };
 
 ClosingBar.propTypes = {
-	daysToClose: PropTypes.node,
+	daysToClose: PropTypes.number,
 };
 
 export default ClosingBar;
