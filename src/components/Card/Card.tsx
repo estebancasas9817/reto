@@ -1,8 +1,15 @@
 import React from 'react';
 import './Card.css';
-import PropTypes from 'prop-types';
 
-const Card = (props: { cardInfo: {} }) => {
+const Card: React.FC<{
+	cardInfo: {
+		heading: string;
+		title: string;
+		description: string;
+		information: string;
+		subTitle: string;
+	};
+}> = (props) => {
 	const { heading, title, description, information, subTitle } = props.cardInfo;
 	return (
 		<div className='card'>
@@ -13,8 +20,5 @@ const Card = (props: { cardInfo: {} }) => {
 			<p className='card__cta'>{subTitle}</p>
 		</div>
 	);
-};
-Card.propTypes = {
-	cardInfo: PropTypes.object,
 };
 export default Card;

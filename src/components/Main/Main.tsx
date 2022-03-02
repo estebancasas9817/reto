@@ -30,7 +30,7 @@ const Main = () => {
 
 	const newCardItems = cloneDeep(user);
 	const date = getDate();
-	newCardItems.map((item) => {
+	newCardItems.map((item: { lastUpdated: any }) => {
 		if (item.lastUpdated) {
 			item.lastUpdated = item.lastUpdated.slice(0, 10);
 			item.lastUpdated = monthsBtwnDates(item.lastUpdated, date);
@@ -38,11 +38,11 @@ const Main = () => {
 		return item;
 	});
 
-	const handlerChildClick = (id, type) => {
+	const handlerChildClick = (id: number, type: number): void => {
 		onChangeVotes(id, type);
 	};
 
-	const onChangeVotes = (id, type) => {
+	const onChangeVotes = (id: number, type: number): void => {
 		if (type === 1) {
 			dispatch({ type: TYPES.increment, payload: id });
 		} else {
@@ -50,7 +50,7 @@ const Main = () => {
 		}
 	};
 
-	const onItemChange = (type) => {
+	const onItemChange = (type: string): void => {
 		setItemType(type);
 	};
 	const cardStyles = classNames({
@@ -67,18 +67,23 @@ const Main = () => {
 			</Wrapper>
 			<CardList className='horizontal__slider'>
 				<div className={cardStyles}>
-					{newCardItems.map((item) => (
-						<div className='item__container' key={item.id}>
-							<CardItem
-								item={item}
-								handlerChildClick={handlerChildClick}
-								iconsObject={iconsObject}
-								itemType={itemType}
-								getVotes={getVotes}
-							/>
-							<ProgressBar votes={item.votes} />
-						</div>
-					))}
+					{newCardItems.map(
+						(item: {
+							id: number;
+							votes: { positive: number; negative: number };
+						}) => (
+							<div className='item__container' key={item.id}>
+								<CardItem
+									item={item}
+									handlerChildClick={handlerChildClick}
+									iconsObject={iconsObject}
+									itemType={itemType}
+									getVotes={getVotes}
+								/>
+								<ProgressBar votes={item.votes} />
+							</div>
+						)
+					)}
 				</div>
 			</CardList>
 			<RectangularBanner />

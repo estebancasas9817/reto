@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './Footer.css';
 import Icons from '../Icons/Icons';
-const Footer = (props) => {
+const Footer: React.FC<{
+	footer: { id: number; title: string }[];
+	footerIcons: { id: number; name: string; iconWidth: string }[];
+}> = (props) => {
 	const { footer } = props;
 	return (
 		<footer className='footer'>
@@ -31,8 +33,5 @@ const Footer = (props) => {
 		</footer>
 	);
 };
-Footer.propTypes = {
-	footer: PropTypes.array,
-	footerIcons: PropTypes.array,
-};
+
 export default Footer;

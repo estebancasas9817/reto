@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import className from 'classnames';
 import './Header.css';
-const Header = (props) => {
+const Header: React.FC<{
+	header: { id: number; title: string }[];
+	isMobile: boolean;
+	filteredLogo: string;
+	onIsMobile: {};
+}> = (props) => {
 	const { header, filteredLogo } = props;
 
 	const navStyles = className({
@@ -29,7 +33,7 @@ const Header = (props) => {
 		bottom__line: !props.isMobile,
 	});
 
-	const handlerClick = () => {
+	const handlerClick = (): void => {
 		props.onIsMobile();
 	};
 	return (
@@ -57,10 +61,5 @@ const Header = (props) => {
 		</header>
 	);
 };
-Header.propTypes = {
-	header: PropTypes.array,
-	filteredLogo: PropTypes.string,
-	isMobile: PropTypes.bool,
-	onIsMobile: PropTypes.func,
-};
+
 export default Header;
