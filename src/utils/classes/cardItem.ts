@@ -1,34 +1,34 @@
 import classNames from 'classnames';
 
-const cardItemStyles = (props: { itemType: string }) => {
+const cardItemStyles = (itemType: string) => {
 	const cardStyles = {
 		cardItem: classNames({
-			cardItem: props.itemType === 'Grid',
-			cardItemList: props.itemType !== 'Grid',
+			cardItem: itemType === 'Grid',
+			cardItemList: itemType !== 'Grid',
 		}),
 		cardImg: classNames({
-			card__img: props.itemType === 'Grid',
-			card__imgList: props.itemType !== 'Grid',
+			card__img: itemType === 'Grid',
+			card__imgList: itemType !== 'Grid',
 		}),
 		cardItemContainer: classNames({
-			cardItem__container: props.itemType === 'Grid',
-			cardItem__container_list: props.itemType !== 'Grid',
+			cardItem__container: itemType === 'Grid',
+			cardItem__container_list: itemType !== 'Grid',
 		}),
 		cardItemTittle: classNames({
-			cardItem__title: props.itemType === 'Grid',
-			cardItem__title_List: props.itemType !== 'Grid',
+			cardItem__title: itemType === 'Grid',
+			cardItem__title_List: itemType !== 'Grid',
 		}),
 		cardItemDesc: classNames({
-			cardIitem__desc: props.itemType === 'Grid',
-			cardItem__desc_List: props.itemType !== 'Grid',
+			cardIitem__desc: itemType === 'Grid',
+			cardItem__desc_List: itemType !== 'Grid',
 		}),
 		cardItemEntertain: classNames({
-			cardIitem__enterntainment: props.itemType === 'Grid',
-			cardItem__enterntainment_List: props.itemType !== 'Grid',
+			cardIitem__enterntainment: itemType === 'Grid',
+			cardItem__enterntainment_List: itemType !== 'Grid',
 		}),
 		buttonBox: classNames({
-			button__box: props.itemType === 'Grid',
-			button__box_List: props.itemType !== 'Grid',
+			button__box: itemType === 'Grid',
+			button__box_List: itemType !== 'Grid',
 		}),
 	};
 	return cardStyles;

@@ -20,7 +20,7 @@ import cloneDeep from 'lodash.clonedeep';
 import { footerIcons } from '../../utils/constants/icons.constans';
 import { stringify } from 'querystring';
 const Main = () => {
-	const [user dispatch] = useContext(UserContext);
+	const [user, dispatch] = useContext(UserContext);
 	const [itemType, setItemType] = useState('Grid');
 	const { myData: footer } = useFetch('footer');
 	const { myData: cardInfo } = useFetch('card');

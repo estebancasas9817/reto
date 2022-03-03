@@ -14,8 +14,18 @@ const CardItem: React.FC<{
 		picture: string;
 		name: string;
 	};
+	itemType: string;
+	typeOfButton: string;
+	iconName: string;
 	iconWidth: string;
-	iconsObject:
+	iconsObject: [
+		{
+			name: string;
+			id: number;
+			style: string;
+		}
+	];
+	handlerChildClick: (id: number, type: number) => void;
 	getVotes: (
 		positive: number,
 		negative: number
@@ -59,7 +69,7 @@ const CardItem: React.FC<{
 		cardItemDesc,
 		cardItemEntertain,
 		buttonBox,
-	} = cardItemStyles(props);
+	} = cardItemStyles(props.itemType);
 
 	return (
 		<div className={cardItem}>
@@ -79,7 +89,7 @@ const CardItem: React.FC<{
 					props.iconsObject.map((icon) => (
 						<Button
 							key={icon.id}
-							iconWidth='16'
+							iconWidth={16}
 							className='button-width'
 							styles={icon.style}
 							name={icon.name}

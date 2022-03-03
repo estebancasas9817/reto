@@ -13,11 +13,11 @@ import useFetch from './components/hooks/useFetch';
 import { getDaysBetween } from './utils/helpers/getDaysBetween';
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
-	const { myData: header } = useFetch('header');
+	const { myData: header  = useFetch('header');
 	const filteredHeader: {} = header.filter(
 		(item: { id: number }) => item.id !== header.length
 	);
-	const filteredLogo: {} = header.reduce((acum, item) => {
+	const filteredLogo: any = header.reduce((acum, item) => {
 		return item;
 	}, 0);
 	const daysToClose = getDaysBetween(new Date('04/15/2022'));

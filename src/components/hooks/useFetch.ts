@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import URL from '../../utils/apis/api';
-const useFetch = (type) => {
+const useFetch = (type: string) => {
 	const [myData, setMyData] = useState([]);
 	const finalUrl = URL + type;
 	useEffect(() => {
