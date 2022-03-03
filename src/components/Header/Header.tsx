@@ -5,7 +5,7 @@ const Header: React.FC<{
 	header: { id: number; title: string }[];
 	isMobile: boolean;
 	filteredLogo: string;
-	onIsMobile: {};
+	onIsMobile: () => void;
 }> = (props) => {
 	const { header, filteredLogo } = props;
 

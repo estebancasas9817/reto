@@ -1,9 +1,15 @@
 import React from 'react';
 import Icons from '../Icons/Icons';
-import PropTypes from 'prop-types';
 
 import './Button.css';
-const Button = (props) => {
+const Button: React.FC<{
+	className: string;
+	name: string;
+	iconWidth: number;
+	voteId: number;
+	styles: string;
+	handlerButtonClick: (voteId: number) => void;
+}> = (props) => {
 	const styles = props.className;
 	const handlerClick = () => {
 		props.handlerButtonClick(props.voteId);
@@ -17,12 +23,5 @@ const Button = (props) => {
 		</button>
 	);
 };
-Button.propTypes = {
-	className: PropTypes.node,
-	name: PropTypes.node,
-	iconWidth: PropTypes.node,
-	styles: PropTypes.node,
-	voteId: PropTypes.node,
-	handlerButtonClick: PropTypes.func,
-};
+
 export default Button;

@@ -4,7 +4,23 @@ import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import './CardItem.css';
 import { cardItemStyles } from '../../utils/classes/cardItem';
-const CardItem = (props) => {
+const CardItem: React.FC<{
+	item: {
+		votes: { positive: number; negative: number };
+		lastUpdated: number;
+		category: string;
+		description: string;
+		id: number;
+		picture: string;
+		name: string;
+	};
+	iconWidth: string;
+	iconsObject:
+	getVotes: (
+		positive: number,
+		negative: number
+	) => { typeOfButton: string; iconName: string };
+}> = (props) => {
 	const [isDisable, setIsDisable] = useState(true);
 	const [iconId, setIconId] = useState(0);
 	const [voteAgain, setVoteAgain] = useState(false);
@@ -21,7 +37,7 @@ const CardItem = (props) => {
 		enterntainmentText = 'Thank you for your vote!';
 	}
 
-	const handlerButtonClick = (id) => {
+	const handlerButtonClick = (id: number) => {
 		setIsDisable(!isDisable);
 		setIconId(id);
 	};
@@ -86,14 +102,6 @@ const CardItem = (props) => {
 			</div>
 		</div>
 	);
-};
-
-CardItem.propTypes = {
-	item: PropTypes.object,
-	iconsObject: PropTypes.array,
-	handlerChildClick: PropTypes.func,
-	itemType: PropTypes.string,
-	getVotes: PropTypes.func,
 };
 
 export default CardItem;

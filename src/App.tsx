@@ -6,7 +6,7 @@ import Button from './components/Button/Button';
 import ClosingBar from './components/ClosingBar/ClosingBar';
 import Main from './components/Main/Main';
 import { useState } from 'react';
-import UserProvider from './contexts/UserProvider.tsx';
+import UserProvider from './contexts/UserProvider';
 import { cardInfo } from './utils/constants/card.constants';
 import React from 'react';
 import useFetch from './components/hooks/useFetch';
@@ -20,7 +20,7 @@ function App() {
 	const filteredLogo: {} = header.reduce((acum, item) => {
 		return item;
 	}, 0);
-	const daysToClose = getDaysBetween(new Date('03/15/2022'));
+	const daysToClose = getDaysBetween(new Date('04/15/2022'));
 	const onIsMobile = () => {
 		setIsMobile(!isMobile);
 	};

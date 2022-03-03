@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 
 import './ButtonVote.css';
 import classNames from 'classnames';
-const ButtonVote = (props) => {
+const ButtonVote: React.FC<{
+	handlerChildClick: (userId: number, iconId: number) => void;
+	userId: number;
+	iconId: number;
+	disable: boolean;
+	voteAgain: boolean;
+	voteText: string;
+	handlerButtonVoteClick: () => void;
+}> = (props) => {
 	const styles = classNames({
 		btn__vote_disable: props.disable,
 		btn__vote_enable: !props.disable,
@@ -24,13 +32,5 @@ const ButtonVote = (props) => {
 		</button>
 	);
 };
-ButtonVote.propTypes = {
-	disable: PropTypes.bool,
-	handlerChildClick: PropTypes.func,
-	voteAgain: PropTypes.bool,
-	userId: PropTypes.number,
-	iconId: PropTypes.number,
-	voteText: PropTypes.string,
-	handlerButtonVoteClick: PropTypes.func,
-};
+
 export default ButtonVote;
