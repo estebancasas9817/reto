@@ -1,0 +1,18 @@
+.btn__vote {
+	font-size: 1.6rem;
+	color: var(--color-white);
+	border: 1px solid var(--color-white);
+	padding: 1rem 0.46rem;
+	height: 3.8rem;
+	width: 10.7rem;
+}
+
+.btn__vote_disable {
+	cursor: not-allowed;
+	background-color: var(--color-background-disable);
+}
+
+.btn__vote_enable {
+	cursor: pointer;
+	background-color: var(--color-background-enable);
+}

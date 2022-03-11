@@ -1,0 +1,27 @@
+.featured-card {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 14%;
+	max-width: 55rem;
+	left: 12%;
+}
+
+@media (max-width: 75em) {
+	.featured-card {
+		left: 8%;
+	}
+}
+@media (max-width: 56.25em) {
+	.featured-card {
+		top: 20%;
+		left: 1%;
+	}
+}
+
+@media (max-width: 37.4em) {
+	.featured-card {
+		max-width: 40rem;
+		top: 20%;
+	}
+}

@@ -1,0 +1,24 @@
+.progressBar {
+	display: flex;
+	height: 3.6rem;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.progressBar__left {
+	background-color: var(--color-green-full);
+	display: flex;
+	align-items: center;
+	padding-left: 2rem;
+	color: #fff;
+}
+
+.progressBar__right {
+	background-color: var(--color-yellow-negative);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 2rem;
+	color: var(--color-white);
+}
