@@ -3,7 +3,7 @@ import ButtonVote from '../Button-Vote/ButtonVote';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 import './CardItem.css';
-import { cardItemStyles } from '../../utils/classes/cardItem';
+import { CardStyles } from '../../utils/classes/cardItem';
 const CardItem: React.FC<{
 	item: {
 		votes: { positive: number; negative: number };
@@ -61,30 +61,20 @@ const CardItem: React.FC<{
 		setVoteAgain(!voteAgain);
 	};
 
-	const {
-		cardItem,
-		cardImg,
-		cardItemContainer,
-		cardItemTittle,
-		cardItemDesc,
-		cardItemEntertain,
-		buttonBox,
-	} = cardItemStyles(props.itemType);
-
 	return (
-		<div className={cardItem}>
-			<img src={item.picture} alt='pictures' width='100%' className={cardImg} />
-			<div className={cardItemContainer}>
+		<CardStyles grid>
+			<img src={item.picture} alt='pictures' width='100%' />
+			<div className='cardItemContainer'>
 				<Button
 					className={`button-width ${typeOfButton}`}
 					iconWidth={16}
 					name={iconName}
 				/>
-				<h1 className={cardItemTittle}>{item.name}</h1>
+				<h1 className='cardItemTittle'>{item.name}</h1>
 			</div>
-			<p className={cardItemDesc}>{item.description}</p>
-			<p className={cardItemEntertain}>{enterntainmentText}</p>
-			<div className={buttonBox}>
+			<p className='cardItemDesc'>{item.description}</p>
+			<p className='cardItemEntertain'>{enterntainmentText}</p>
+			<div className='buttonBox'>
 				{!voteAgain &&
 					props.iconsObject.map((icon) => (
 						<Button
@@ -110,7 +100,7 @@ const CardItem: React.FC<{
 					handlerButtonVoteClick={handlerButtonVoteClick}
 				/>
 			</div>
-		</div>
+		</CardStyles>
 	);
 };
 

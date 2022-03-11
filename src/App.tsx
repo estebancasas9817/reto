@@ -13,7 +13,7 @@ import useFetch from './components/hooks/useFetch';
 import { getDaysBetween } from './utils/helpers/getDaysBetween';
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
-	const { myData: header  = useFetch('header');
+	const { myData: header } = useFetch('header');
 	const filteredHeader: {} = header.filter(
 		(item: { id: number }) => item.id !== header.length
 	);
